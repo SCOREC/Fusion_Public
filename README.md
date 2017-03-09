@@ -8,5 +8,7 @@ Please contact developers if you have any question or request.
 
 
 # Developing repository (Private)
-xgc_scorec : Mesh-PIC library
-Fusion : XGC Meshing Code
+
+* xgc_scorec : Mesh-PIC library
+
+* Fusion : XGC Meshing Code
