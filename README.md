@@ -1,6 +1,6 @@
 # Fusion (Public)
 
-This is a public branch to release fusion-related codes being developed in SCOREC RPI. (For developers, please find Fusion branch, instead)
+This is a public repo to release fusion-related codes being developed in SCOREC RPI. (For developers, please find Fusion branch, instead)
 
 Users can find relenvant documents at "wiki" menu of this public branch.
 
