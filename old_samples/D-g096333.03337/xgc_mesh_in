@@ -12,16 +12,16 @@ SimLic /net/common/meshSim/license/license.txt
 !SimLic /usr/pppl/Simmetrix/license.txt
 
 !This is the desired spacing between psi curves
-inter_curve_spacing 0.04
-inter_curve_spacing_min 0.02
-inter_curve_spacing_max 0.05
-inter_curve_spacing_axis_forcing 0.05
+inter_curve_spacing 0.01
+inter_curve_spacing_min 0.002
+inter_curve_spacing_max 0.008
+!!inter_curve_spacing_axis_forcing 0.05
 
 !This is the desired spacing between points on a psi curve, in meters
-intra_curve_spacing 0.03
+intra_curve_spacing 0.008
 
 !Choose a way of uniformity in radial direction (1: psi, 2: sqrt(psi))
-radial_uniform_meshing_unit 1
+radial_uniform_meshing_unit 2
 
 !not aligned but random starting positions in curve generation (default=true, bool or logical)
 random_start 1
@@ -37,13 +37,13 @@ last_closed_psi 0.53
 maxAspectRatioXpt 3.0 
 
 !Defines the mesh size at the boundary wall.  0.16 meter
-meshSizeWall 16.0
+meshSizeWall 08.0
 
 !The mesh size at the x-point  0.04 meter
 meshSizeXpt 0.25
 
 !Define the mesh size gradient in unstructured area
-meshSizeGrad 0.8
+meshSizeGrad 0.4
 
 !the order of limiter nodes. 0: clock-wise; 1 counter
 bdyNodeOrder 0
