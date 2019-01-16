@@ -1,56 +1,73 @@
-adv_log 1
-eqdskFile JET_79692_ppfseq388_v5.eqdsk
-radial_uniform_meshing_unit 3
-eq_tempi_shape -1 
-eq_tempi_file Profiledata_JET_79692_ppfseq388_v5.txt 
+output_vtk_steps 1
 
-!!reverse_psi 1
+!Input EFIT file containing psi grid and wall boundary.
+!eqdskFile g157308.04200
+eqdskFile gm3dc1.g157308.04200_modwall
+
+!!small_feature 0.0001
+small_feature 0.1
+
+!If set to 1, this reverses the sign of Psi, allowing for a maximum at the axis
+reverse_psi 0
 random_start 1
+adv_log 1
+!Choose a way of uniformity in radial direction (1: psi, 2: sqrt(psi))
+radial_uniform_meshing_unit -1
 
 !License file for Simmetrix software
-!SimLic /usr/pppl/Simmetrix/license.txt  
 SimLic /net/common/meshSim/license/license.txt
+!!SimLic /usr/pppl/Simmetrix/license.txt  
+!!SimLic /usr/pppl/Simmetrix/simmodsuite.lic
+!!SimLic /usr/pppl/Simmetrix/simmodsuite.lic.pre140517.temp
 
 !This is the desired spacing between psi curves, in meters
-inter_curve_spacing 1.0    ! 0.75 x 2 = 1.3
-inter_curve_spacing_max 0.01   ! 0.005 x 2 = 0.01
-inter_curve_spacing_min 0.002  ! 0.002 x 2 = 0.004
-inter_curve_spacing_sol 0.01
-drop_open_psi 0.03
+inter_curve_spacing 1.00
+inter_curve_spacing_max 0.02
+inter_curve_spacing_min 0.005
+inter_curve_spacing_axis_forcing 0.01
+inter_curve_spacing_file d3d_157308_surf.dat
 
 !This is the desired spacing between points on a psi curve, in meters
-! note that tanh(1) = 0.761594, tanh(2)=0.964028
-!!intra_curve_spacing 0.0135            ! 0.0045 x 3 = 0.0135
-intra_curve_spacing 0.0045            ! 0.0045 x 3 = 0.0135
-intra_curve_spacing_xpt_factor 3.0
-intra_curve_spacing_xpt_range 0.6
+intra_curve_spacing_option -2
+intra_curve_spacing_propf_min 0.95
+intra_curve_spacing_propf_max 2.5
+intra_curve_spacing 0.005
+
+intra_curve_spacing_file d3d_157308_dpol2.dat
+
 
 ! Temperature dependence for meshing
+eq_tempi_shape -1 
 eq_tempi_x1 0.001
 eq_tempi_x2 0.975
 eq_tempi_x3 0.0
 eq_tempi_v1 1e3
 eq_tempi_v2 0.1e3
 eq_tempi_v3 0.1e3
+eq_tempi_file yang_tearing_ti_1mm.dat
 
 !Curve with psi value larger than it will be dropped
+drop_open_psi 1.13.0 !9.1E-2
+drop_open_psi_hfs 1.13
+inter_curve_spacing_sol 0.0004
+
+! Distance criterion for private flux region
+distance_factor_vtx_adjacent2wall 0.4
 
 ! used if xpt_location = 0 (no x point is used)
-last_closed_psi 0.20
+last_closed_psi 0.0806735
 
 !Determines what elements near the x-point will be improved
-maxAspectRatioXpt 4 
+maxAspectRatioXpt 3 
 
+!The mesh size at the x-point
+meshSizeXpt 0.25
 
-!Defines the mesh size at the boundary wall. (unit: intra_curve_spacing)
-meshSizeWall 1.5               ! 1.5cm = 0.015 meter
+!Defines the mesh size at the boundary wall.
+meshSizeWall 4.0
 
-!The mesh size at the x-point (unit: intra_curve_spacing)
-meshSizeXpt 1.                  ! 1.0 x 0.015 meter = 0.015
-!!refineXpt_level 2              ! so far, only up to 2 levels are supported
-
-!Define the mesh size gradient in unstructured area (2/3 : approx. double the size from finner to coarser)
-meshSizeGrad 0.1
+!Define the mesh size gradient in unstructured area
+meshSizeGrad 0.8
 meshSizeGradXpt 0.3
 
 !the order of limiter nodes. 0: clock-wise; 1 counter
@@ -76,13 +93,13 @@ tolerance_meters 5E-10
 
 !This value is used to prevent the same critical point from being detected twice.
 !If two of the same type of critical point are within this distance, one will be ignored.
-min_critical_spacing 0.5
+min_critical_spacing 0.1
 
 !The inverse of this value gives the number of steps used to search in parametric space on the outer grid boundary.
 step_normalized 0.0125
 
 !This is the change in phi of each rk4 step taken when moving a point along a psi curve.
-step_radians 0.009817477
+step_radians 0.00059817477
 
 !This is a maximum step size added to Newton's method to deal with extremely small derivatives near critical points.
 max_step_meters 0.0025
@@ -97,8 +114,8 @@ spacing_tolerance_absolute 0.6180339887498948482
 !If the dot product between a curve's direction and the wal direction is greater than
 !this value, the curve may be cut off as it approaches too close to the edge.
 !The default value (0.996) corresponds to an approach angle of 5 degrees.
-parallel_cutoff 0.999975
+parallel_cutoff 0.996 !0.9999975
 
 !The output node and element files
-!nodeFile xgc.node
-!elmFile xgc.ele
+!nodeFile d3d_157308_60mm.node
+!elmFile d3d_157308_60mm.ele

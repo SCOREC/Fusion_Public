@@ -1,0 +1,35 @@
+"gyro" is a variant of D-g096333.03337 in the repository.
+
+For the "gyro", I made below changes in the "xgc_mesh_in". Mainly, inter-curve
+spacing is intended to use gyro radius unit. "inter_curve_spacing 1.0" means 1
+gyro-radius size is used for inter curve spacing. Since gyro-radius depends on
+local temperature, "eq_tempi_shape -1" (-1 means profile from an external file)
+and "eq_tempi_file" provides the file name for the temperature.
+
+Based on inter-curve spacing, intra_curve_spacing also should be modified since
+large intra_curve_spacing sometimes causes crash when model face is defined
+especially near axis where only few points define concentric circles and model
+faces may overlap with each other.
+
+"fluxC_in_privateR_on 1" turns on generating flux curves in private region. You
+can turn it on/off in the demonstration.
+
+"inter_curve_spacing_axis_forcing" is an option to force to put a flux curve
+in the specified radial position. That is rarely used, and I turned it off by
+default.
+
+- Eisung
+
+==============================
+radial_uniform_meshing_unit 3
+inter_curve_spacing 1.0
+inter_curve_spacing_min 0.0005
+inter_curve_spacing_max 0.004
+!!!inter_curve_spacing_axis_forcing 0.05 !!
+eq_tempi_shape -1
+eq_tempi_file ti_2.3_factor_multiplied.txt
+
+intra_curve_spacing 0.003
+
+fluxC_in_privateR_on 1
+=====================

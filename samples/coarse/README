@@ -1,0 +1,9 @@
+"coarse" is from one of actual meshing request from Robert. The characteristics
+of the input is to use external files not only for inter-curve spacing but also
+for intra-curve spacing.
+
+You can see options to use external file "radial_uniform_meshing_unit -1" and
+"intra_curve_spacing_option -2" for inter- and intra, respectively. Also file
+names are denoted in "inter_curve_spacing_file" and "intra_curve_spacing_file".
+
+- Eisung

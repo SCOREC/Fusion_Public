@@ -57,6 +57,7 @@ meshSizeWall 40.0
 
 !Define the mesh size gradient in unstructured area
 meshSizeGrad 0.3
+meshSizeGradXpt 0.3
 
 !the order of limiter nodes. 0: clock-wise; 1 counter
 bdyNodeOrder 0
