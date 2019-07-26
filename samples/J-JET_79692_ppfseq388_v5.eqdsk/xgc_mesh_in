@@ -102,3 +102,5 @@ parallel_cutoff 0.999975
 !The output node and element files
 !nodeFile xgc.node
 !elmFile xgc.ele
+
+! xptInfluDist 0.1
