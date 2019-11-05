@@ -96,6 +96,5 @@ parallel_cutoff 0.999975
 !elmFile xgc.ele
 
 ! wall1LayAdapt 1
-! xptInfluDist 0.3
-! useWallBbox 1
+xptInfluDist 0.3
 ! adjOrder 1
