@@ -25,7 +25,6 @@ inter_curve_spacing_max 0.02
 inter_curve_spacing_min 0.005
 inter_curve_spacing_axis_forcing 0.005
 inter_curve_spacing_file kstar_018451_2790_xgc1_surf.dat
-!inter_curve_spacing_file LTX_1504291255_47400_xgc1_surf.dat
 
 !This is the desired spacing between points on a psi curve, in meters
 intra_curve_spacing_option -1
@@ -33,8 +32,7 @@ intra_curve_spacing_propf_min 0.95
 intra_curve_spacing_propf_max 2.5
 intra_curve_spacing 0.003
 
-!intra_curve_spacing_file kstar_018451_2790_xgc1_surf.dat
-intra_curve_spacing_file kstar_018451_2790_xgc1_new_dpol.dat
+intra_curve_spacing_file kstar_018451_2790_xgc1_dpol.dat
 
 !Curve with psi value larger than it will be dropped
 grid_bdry_psi2 1.13.0 !9.1E-2

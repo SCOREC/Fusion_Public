@@ -14,9 +14,9 @@ adv_log 1
 radial_uniform_meshing_unit -1
 
 !License file for Simmetrix software
-!!SimLic /net/common/meshSim/license/license.txt
+SimLic /net/common/meshSim/license/license.txt
 !!SimLic /usr/pppl/Simmetrix/license.txt  
-SimLic /usr/pppl/Simmetrix/simmodsuite.lic
+!!SimLic /usr/pppl/Simmetrix/simmodsuite.lic
 !!SimLic /usr/pppl/Simmetrix/simmodsuite.lic.pre140517.temp
 
 !This is the desired spacing between psi curves, in meters
@@ -32,8 +32,7 @@ intra_curve_spacing_propf_min 0.95
 intra_curve_spacing_propf_max 2.5
 intra_curve_spacing 0.003
 
-!intra_curve_spacing_file kstar_018451_2790_xgca_dpol.dat
-intra_curve_spacing_file kstar_018451_2790_xgca_new_dpol.dat
+intra_curve_spacing_file kstar_018451_2790_xgca_dpol.dat
 
 !Curve with psi value larger than it will be dropped
 grid_bdry_psi2 1.13.0 !9.1E-2
