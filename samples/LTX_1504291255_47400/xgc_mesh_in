@@ -47,7 +47,7 @@ distance_factor_vtx_adjacent2wall 0.4
 
 ! used if xpt_location = 0 (no x point is used)
 ! last_closed_psi 0.0072290832
-last_closed_psi 0.004000
+last_closed_psi 0.004438
 
 !Determines what elements near the x-point will be improved
 maxAspectRatioXpt 2 
