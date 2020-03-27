@@ -22,6 +22,15 @@ inter_curve_spacing_min 0.0001
 !This is the desired spacing between points on a psi curve, in meters
 intra_curve_spacing 0.012
 
+!This parameter sets the value of the intra_curve_spacing close to X-point. It is set in terms of factor of intra_curve_spacing.
+!In this sample its (0.1*intra_curve_spacing).The sample has a problem in tracing the separatrix curve so make sure the value is equal
+! or less than 0.1*0.012  
+intra_curve_spacing_xpt_factor 0.1
+
+!A parameter that sets the propagation of the above spacing. In this case it is limited to just one spacing. You can increase the value to change the size of
+! more points close to X-point
+intra_curve_spacing_xpt_range 0.0012
+
 ! Temperature dependence for meshing
 eq_tempi_shape -1 
 eq_tempi_x1 0.001
