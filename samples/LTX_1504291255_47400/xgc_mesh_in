@@ -36,7 +36,7 @@ intra_curve_spacing_file LTX_1504291255_47400_xgca_dpol.dat
 
 
 !Curve with psi value larger than it will be dropped
-grid_bdry_psi2 1.15.0 !9.1E-2
+grid_bdry_psi2 1.15
 grid_bdry_psi2hfs 1.15
 inter_curve_spacing_sol 0.0004
 

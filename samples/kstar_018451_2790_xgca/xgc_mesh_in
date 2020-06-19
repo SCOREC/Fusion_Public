@@ -35,7 +35,7 @@ intra_curve_spacing 0.003
 intra_curve_spacing_file kstar_018451_2790_xgca_dpol.dat
 
 !Curve with psi value larger than it will be dropped
-grid_bdry_psi2 1.13.0 !9.1E-2
+grid_bdry_psi2 1.13
 grid_bdry_psi2hfs 1.13
 inter_curve_spacing_sol 0.0004
 

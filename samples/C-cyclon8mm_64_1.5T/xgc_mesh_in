@@ -25,11 +25,11 @@ intra_curve_spacing_prof_max 1.2
 !Choose a way of uniformity in radial direction (1: psi, 2: sqrt(psi))
 radial_uniform_meshing_unit 4
 
-eq_tempi_shape=3
-eq_tempi_x1=0.3536
-eq_tempi_x2=1
-eq_tempi_x3=.49275362318840579710
-eq_tempi_v1=2000
+eq_tempi_shape 3
+eq_tempi_x1 0.3536
+eq_tempi_x2 1
+eq_tempi_x3 .49275362318840579710
+eq_tempi_v1 2000
 
 !not aligned but random starting positions in curve generation (default=true, bool or logical)
 random_start 1
@@ -89,11 +89,11 @@ max_step_meters 0.0025
 
 !If possible, point spacing on a curve will fall within this fraction of the desired value.
 spacing_tolerance_optimal 0.9
-% spacing_tolerance_optimal 0.5
+! spacing_tolerance_optimal 0.5
 
 !Point spacing on a curve will always be within this fraction of the desired value.
 !The acceptable range is calculated as 1/(1+tol) to (1+tol) so a value of 1.0 gives a range of .5 to 2.0 times the desired spacing.
-% spacing_tolerance_absolute 0.61803398874989484820
+! spacing_tolerance_absolute 0.61803398874989484820
 spacing_tolerance_absolute 0.9
 
 !If the dot product between a curve's direction and the wal direction is greater than

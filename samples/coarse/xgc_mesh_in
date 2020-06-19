@@ -47,7 +47,7 @@ eq_tempi_v3 0.1e3
 eq_tempi_file yang_tearing_ti_1mm.dat
 
 !Curve with psi value larger than it will be dropped
-drop_open_psi 1.13.0 !9.1E-2
+drop_open_psi 1.13
 drop_open_psi_hfs 1.13
 inter_curve_spacing_sol 0.0004
 
