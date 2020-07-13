@@ -80,10 +80,6 @@ tolerance_psi 1E-8
 !Used in checking if a point is on the boundary, or if it is a duplicate of another point.
 tolerance_meters 5E-10
 
-!This value is used to prevent the same critical point from being detected twice.
-!If two of the same type of critical point are within this distance, one will be ignored.
-min_critical_spacing 0.1
-
 !The inverse of this value gives the number of steps used to search in parametric space on the outer grid boundary.
 step_normalized 0.0125
 
