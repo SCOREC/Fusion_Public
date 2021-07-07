@@ -1,0 +1,113 @@
+output_vtk_steps 1
+
+!Input EFIT file containing psi grid and wall boundary.
+eqdskFile g144981.03175_572.txt
+!limiterFile wallcurve_mod.txt
+
+!If set to 1, this reverses the sign of Psi, allowing for a maximum at the axis
+reverse_psi 0
+random_start 1
+adv_log 1
+!Choose a way of uniformity in radial direction (1: psi, 2: sqrt(psi))
+radial_uniform_meshing_unit -1
+finite_domain_on 0
+
+
+!License file for Simmetrix software
+!!SimLic /net/common/meshSim/license/license.txt
+!!SimLic /usr/pppl/Simmetrix/license.txt  
+SimLic /usr/pppl/Simmetrix/simmodsuite.lic
+!!SimLic /usr/pppl/Simmetrix/simmodsuite.lic.pre140517.temp
+
+
+!This is the desired spacing between psi curves, in meters
+inter_curve_spacing 0.005
+inter_curve_spacing_max 0.03
+inter_curve_spacing_min 0.002
+inter_curve_spacing_axis_forcing 0.004
+inter_curve_spacing_file d3d_144981-03175_xgc1_surf.dat
+
+!This is the desired spacing between points on a psi curve, in meters
+intra_curve_spacing_option -1
+intra_curve_spacing_propf_min 0.95
+intra_curve_spacing_propf_max 4.0
+intra_curve_spacing 0.03
+
+intra_curve_spacing_file d3d_144981-03175_xgc1_dpol.dat
+
+
+!Curve with psi value larger than it will be dropped
+!drop_open_psi 0.08
+!drop_open_psi_hfs 0.08
+grid_bdry_psi2 1.20
+grid_bdry_psi2hfs 1.20
+inter_curve_spacing_sol 0.09
+
+fluxC_in_privateR_on 1
+wall1LayAdapt 1
+intra_curve_minlength_lastedge 0.001
+
+! Distance criterion for private flux region
+!distance_factor_vtx_adjacent2wall 0.4
+
+! used if xpt_location = 0 (no x point is used)
+!last_closed_psi 0.0806735
+
+!Defines the mesh size at the boundary wall.
+meshSizeWall 1.0
+
+!Define the mesh size gradient in unstructured area
+meshSizeGradXpt 0.3
+
+xptInfluDist 0.2
+
+!intra_curve_spacing_xpt_factor 0.5
+
+
+!factor to rescale psi
+eqd_psi_factor 1.0
+
+!Number of 2D planes around the torus, used in spacing points on a curve.
+num_phi_planes 256
+
+!Tolerance for the gradient of psi
+!Effects how exactly the critical points (mins, x-point) are found
+tolerance_psi_deriv 1E-10
+
+!Tolerance for psi
+!All points on a psi surface are guaranteed to be within this range of the target psi value.
+tolerance_psi 1E-8
+
+!Tolerance in meters
+!Used in checking if a point is on the boundary, or if it is a duplicate of another point.
+tolerance_meters 5E-10
+
+!This value is used to prevent the same critical point from being detected twice.
+!If two of the same type of critical point are within this distance, one will be ignored.
+!min_critical_spacing 0.1
+
+!The inverse of this value gives the number of steps used to search in parametric space on the outer grid boundary.
+step_normalized 0.0125
+
+!This is the change in phi of each rk4 step taken when moving a point along a psi curve.
+step_radians 0.00059817477
+
+!This is a maximum step size added to Newton's method to deal with extremely small derivatives near critical points.
+max_step_meters 0.0025
+
+!If possible, point spacing on a curve will fall within this fraction of the desired value.
+spacing_tolerance_optimal 0.6180339887498948482
+
+!Point spacing on a curve will always be within this fraction of the desired value.
+!The acceptable range is calculated as 1/(1+tol) to (1+tol) so a value of 1.0 gives a range of .5 to 2.0 times the desired spacing.
+spacing_tolerance_absolute 0.6180339887498948482
+
+!If the dot product between a curve's direction and the wal direction is greater than
+!this value, the curve may be cut off as it approaches too close to the edge.
+!The default value (0.996) corresponds to an approach angle of 5 degrees.
+parallel_cutoff 0.996 !0.9999975
+
+!The output node and element files
+nodeFile       d3d_144981-03175_xgc1.node
+elmFile        d3d_144981-03175_xgc1.ele
+addinfoflxFile d3d_144981-03175_xgc1.flx.aif
