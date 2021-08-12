@@ -1,6 +1,6 @@
 !Input EFIT file containing psi grid and wall boundary.
-eqdskFile ../experiment/g132588.00650
-limiterFile ../experiment/wallcurve_mod2a.txt
+eqdskFile g132588.00650
+limiterFile wallcurve_mod2a.txt
 
 !If set to 1, this reverses the sign of Psi, allowing for a maximum at the axis
 reverse_psi 0
