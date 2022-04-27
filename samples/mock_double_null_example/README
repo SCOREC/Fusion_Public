@@ -1,0 +1,7 @@
+This test case was used for the development purposes and had a minor issue.
+Instead of one O-Point and 2 X-Points, all three points were identified as
+X-Points. This is because all three points were saddle points and there was 
+no minimum points. In order to use this case, uncomment following part from 
+code
+
+https://github.com/SCOREC/tomms/blob/simapis-mod/xgc/findox.cc#L169-L177
