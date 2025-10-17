@@ -11,7 +11,7 @@ reverse_psi 0
 random_start 1
 adv_log 1
 !Choose a way of uniformity in radial direction (1: psi, 2: sqrt(psi))
-radial_uniform_meshing_unit -1 
+radial_uniform_meshing_unit 1 
 
 !License file for Simmetrix software
 SimLic /net/common/meshSim/license/license.txt
@@ -20,11 +20,10 @@ SimLic /net/common/meshSim/license/license.txt
 !!SimLic /usr/pppl/Simmetrix/simmodsuite.lic.pre140517.temp
 
 !This is the desired spacing between psi curves, in meters
-inter_curve_spacing  0.01 
+inter_curve_spacing  0.005 
 inter_curve_spacing_max 0.1
 inter_curve_spacing_min 0.005
 !!!!inter_curve_spacing_axis_forcing 0.20
-inter_curve_spacing_file surf_norm_ra0p45_0p55.dat 
 
 !This is the desired spacing between points on a psi curve, in meters
 intra_curve_spacing_option 0 !should use zero; if -2 mesh will not be field line folloing

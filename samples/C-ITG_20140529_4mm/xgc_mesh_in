@@ -22,13 +22,13 @@ intra_curve_spacing 0.009
 !!<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 !! == ELECTRON == >>>>>>>>>>>>>>>>>>
-use_subgrid 1
+use_subgrid 0
 
 subgrid_bdry_psi1 0.34
 subgrid_bdry_psi2 0.46
 ! -- inter_curve --
 subgrid_inter_curve_spacing_unit 4
-subgrid_inter_curve_spacing 0.00015
+subgrid_inter_curve_spacing 0.0015
 subgrid_inter_curve_spacing_min 0.00014
 subgrid_inter_curve_spacing_max 0.00016
 ! -- gradient region --
