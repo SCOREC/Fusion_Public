@@ -4,38 +4,13 @@ adv_log 2
 !drop_open_psi 0.1
 !inter_curve_spacing_sol 0.004
 
-finite_domain_on 1
-!! == ION == >>>>>>>>>>>>>>>>>>>>>>
-grid_bdry_psi1 0.545
-! -- NOTE THAT set 'drop_open_psi'(obsolete) will overwrite grid_bdry_psi2
-! -- if you want to define grid_bdry_psi2, please do not set drop_open_psi
-! -- also drop_open_psi does not support domain less than 1
-grid_bdry_psi2 0.955
 
 ! -- inter-curve --
-radial_uniform_meshing_unit 4    
 inter_curve_spacing 0.0036
 inter_curve_spacing_min 0.0034
 inter_curve_spacing_max 0.0038
 ! -- intra-curve --
 intra_curve_spacing 0.0156
-!!<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-!! == ELECTRON == >>>>>>>>>>>>>>>>>>
-use_subgrid 1
-
-subgrid_bdry_psi1 0.55
-subgrid_bdry_psi2 0.952
-! -- inter_curve --
-subgrid_inter_curve_spacing_unit 4
-subgrid_inter_curve_spacing 0.00026
-subgrid_inter_curve_spacing_min 0.0002
-subgrid_inter_curve_spacing_max 0.0003
-! -- gradient region --
-! -- subgrid_gradient_factor default value = 2.
-!subgrid_gradient_factor 2.
-!!<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 
 !Choose a way of uniformity in radial direction (1: psi, 2: sqrt(psi))
 radial_uniform_meshing_unit 4
@@ -58,7 +33,7 @@ eq_tempi_v3 0.1e3
 
 
 !Determines what elements near the x-point will be improved
-maxAspectRatioXpt 2 
+maxAspectRatioXpt 2
 
 !The mesh size at the x-point
 meshSizeXpt 2.0

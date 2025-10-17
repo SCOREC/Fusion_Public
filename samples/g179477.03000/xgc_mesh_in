@@ -18,7 +18,7 @@ inter_curve_spacing_max 0.05
 inter_curve_spacing_axis_forcing 0.05
 
 fluxC_in_privateR_on 0
-inter_curve_spacing_private_on 1
+inter_curve_spacing_private_on 0
 inter_curve_spacing_private_file  pvt_spacing.txt
 !inter_curve_spacing_privateR7 0.008
 
@@ -26,7 +26,7 @@ inter_curve_spacing_private_file  pvt_spacing.txt
 intra_curve_spacing 0.02
 
 !Choose a way of uniformity in radial direction (1: psi, 2: sqrt(psi))
-radial_uniform_meshing_unit -1
+radial_uniform_meshing_unit 1
 inter_curve_spacing_file surf.dat
 
 !not aligned but random starting positions in curve generation (default=true, bool or logical)
